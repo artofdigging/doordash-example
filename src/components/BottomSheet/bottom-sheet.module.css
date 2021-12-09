@@ -1,0 +1,20 @@
+.bottomSheet {
+  max-width: 480px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 8px rgb(0 0 0 / 30%);
+  border-radius: 8px;
+  min-height: 90vh;
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

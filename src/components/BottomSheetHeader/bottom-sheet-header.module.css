@@ -1,0 +1,20 @@
+.bottomSheetHeader {
+  border-bottom: 1px solid #000000; /*Temp*/
+  padding-bottom: 16px;
+}
+
+.bar {
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  margin: 8px auto;
+  background: #ddd;
+}
+
+.title {
+  margin: 0;
+}
+
+.subTitle {
+  margin: 0;
+}
