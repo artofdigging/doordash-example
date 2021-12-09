@@ -1,6 +1,8 @@
 import react, {useState} from 'react';
+import { useSpring, animated } from 'react-spring'
 import styles from './bottom-sheet.module.css';
 import BottomSheetHeader from '../BottomSheetHeader';
+
 
 
 const BottomSheet = (props) => {

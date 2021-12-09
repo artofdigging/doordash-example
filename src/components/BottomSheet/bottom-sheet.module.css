@@ -9,12 +9,16 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   width: 100%;
+
+  transform: translateY(100%);
 }
 
 .hide {
-  display: none;
+  transform: translateY(100%);
+  transition: 350ms;
 }
 
 .show {
-  display: block;
+  transform: translateY(0);
+  transition: 350ms;
 }

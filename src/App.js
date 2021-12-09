@@ -15,7 +15,17 @@ function App() {
 
   return (
     <div className="App">
-      <Button text="Toggle BottomSheet" clickFunc={() => {setVisability(!isVisable)}}/>
+
+      <div className="App-header">
+        <h1>Building a `BottomSheet` component</h1>
+        <p>Click below to show the BottomSheet and play with it's behavior!</p>
+        <Button text="Toggle BottomSheet" clickFunc={() => {setVisability(!isVisable)}}/>
+        <Button text="Toggle Debug Information" clickFunc={() => console.log('Debug')}/>
+      </div>
+      
+
+
+
       {isVisable && <BlackOverlay />} 
       <BottomSheet 
         isVisable={isVisable}
