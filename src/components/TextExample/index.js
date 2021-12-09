@@ -1,10 +1,10 @@
 import react from 'react';
-import style from './text-example.module.css';
+import styles from './text-example.module.css';
 
 const TextExample = () => {
   return (
-    <div>
-      This is some text
+    <div className={styles.textExample}>
+      The user of this component can put whatever content I want in here, and it should be scrollable (without causing the sheet to pull up or down)!
     </div>
   )
 }

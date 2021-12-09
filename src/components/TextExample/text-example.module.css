@@ -1,0 +1,6 @@
+.textExample {
+  background: linear-gradient(rgb(230, 100, 101), rgb(145, 152, 229));
+  color: #ffffff;
+  height: 800px;
+  padding: 8px;
+}
