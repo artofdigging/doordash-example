@@ -7,15 +7,18 @@ import BottomSheetHeader from '../BottomSheetHeader';
 
 
 const BottomSheet = (props) => {
-  const transform = useSpring({ transform : props.isVisable ? 'translateY(0%)' : 'translateY(100%)' });
+  const transform = useSpring({config: {tension:210, friction:20 },  transform : props.isVisable ? 'translateY(50%)' : 'translateY(100%)' });
 
-  /*const [bottomSheetPos, setBottomSheetPos] = useState({x: 0, y: 0})*/
-  
+  const bind = useDrag(({ down, movement: [mx, my] }) => {
+    console.log(down,my)
+    
+  })
 
   return (
     <animated.div
       class={ `${styles.bottomSheet}` }
       style={transform}
+      {...bind()}
     >
       <BottomSheetHeader 
         title="My Custom Title"
