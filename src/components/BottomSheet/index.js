@@ -10,7 +10,7 @@ const BottomSheet = (props) => {
   const ref = react.useRef();
   const [isCollapsed, setCollapsed] = useState(true);
 
-  const transform = useSpring({
+  const visableTransform = useSpring({
     config:{
       tension:210,
       friction:20
@@ -20,7 +20,7 @@ const BottomSheet = (props) => {
       transform : (props.isVisable ? 'translateY(50vh)' : 'translateY(100vh)')
     }
   })
-  const transform2 = useSpring({
+  const collapseTransform = useSpring({
     config:{
       tension:210,
       friction:20
@@ -30,22 +30,33 @@ const BottomSheet = (props) => {
       transform : (props.isVisable & isCollapsed ? 'translateY(50vh)'  :  (props.isVisable & !isCollapsed) ? 'translateY(0vh)' : 'translateY(100vh)')
     }
   })
+
+  const handleTouch = event => {
+    event.stopPropagation(); 
+    setCollapsed(!isCollapsed);
+  };
+
+  const close = (event) => {
+    props.close(event);
+
+    if(!isCollapsed){
+      setCollapsed(!isCollapsed);
+    }
+  }
   
 
   return (
     <animated.div
       class={ `${styles.bottomSheet}` }
-      style={transform, transform2}
+      style={collapseTransform}
       ref={ref}
     > 
-      <div onClick={() => setCollapsed(!isCollapsed)}>
         <BottomSheetHeader 
           title="My Custom Title"
           subTitle="Some more information here"
-          close={props.close}
+          close={close}
+          touch={handleTouch}
         />
-      </div>
-      
 
       <div className={styles.bottomSheetContent}>
         {props.children}

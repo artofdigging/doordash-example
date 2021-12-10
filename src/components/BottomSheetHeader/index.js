@@ -4,12 +4,14 @@ import CloseButton from '../CloseButton';
 
 const BottomSheetHeader = (props) => {
   return (
-    <div className={styles.bottomSheetHeader}>
-      <div className={styles.bar}></div>
+    <react.Fragment>
+      <div className={styles.bottomSheetHeader} onTouchStart={props.touch}>
+        <div className={styles.bar}></div>
+        <h2 className={styles.title}>{props.title}</h2>
+        <h3 className={styles.subTitle}>{props.subTitle}</h3>
+      </div>
       <CloseButton close={props.close}/>
-      <h2 className={styles.title}>{props.title}</h2>
-      <h3 className={styles.subTitle}>{props.subTitle}</h3>
-    </div>
+    </react.Fragment>
   )
 }
 

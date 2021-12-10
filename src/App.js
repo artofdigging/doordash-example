@@ -10,7 +10,15 @@ import { useState } from 'react';
 
 function App() {
   const [isVisable, setVisability] = useState(false);
+
+  const handleClose = event => {
+    event.stopPropagation();
+    setVisability(!isVisable)
+    console.log('click close')
+  };
+
   return (
+    
     <div className="App">
 
       <div className="App-header" style={{color: isVisable ? '#ffffff' : '#000000'}}>
@@ -23,7 +31,7 @@ function App() {
       {isVisable && <BlackOverlay />} 
       <BottomSheet 
         isVisable={isVisable}
-        close={() => {setVisability(!isVisable)}}
+        close={handleClose}
       >
         <TextExample />
       </BottomSheet>
