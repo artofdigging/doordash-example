@@ -8,6 +8,8 @@ This bottom sheet component includes the ability to customise what is inside the
 <BottomSheet
     isVisable={isVisable}
     close={handleClose}
+    title="A title"
+    subTitle="a sub title"
 >
     {Children}
 </BottomSheet>
@@ -26,3 +28,11 @@ close
 {Children}
 
 > The child component that will be rendered inside of the parent component
+
+title
+
+> The title in the header of the bottom sheet
+
+subTitle
+
+> The sub title of the header in the bottom sheet
