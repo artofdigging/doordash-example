@@ -10,17 +10,7 @@ const BottomSheet = (props) => {
   const ref = react.useRef();
   const [isCollapsed, setCollapsed] = useState(true);
 
-  const visableTransform = useSpring({
-    config:{
-      tension:210,
-      friction:20
-    },
-    from: { transform: 'translateY(100vh)'},
-    to: {
-      transform : (props.isVisable ? 'translateY(50vh)' : 'translateY(100vh)')
-    }
-  })
-  const collapseTransform = useSpring({
+  const transform = useSpring({
     config:{
       tension:210,
       friction:20
@@ -48,7 +38,7 @@ const BottomSheet = (props) => {
   return (
     <animated.div
       class={ `${styles.bottomSheet}` }
-      style={collapseTransform}
+      style={transform}
       ref={ref}
     > 
         <BottomSheetHeader 
