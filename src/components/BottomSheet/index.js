@@ -42,8 +42,8 @@ const BottomSheet = (props) => {
       ref={ref}
     > 
         <BottomSheetHeader 
-          title="My Custom Title"
-          subTitle="Some more information here"
+          title={props.title}
+          subTitle={props.subTitle}
           close={close}
           touch={handleTouch}
         />

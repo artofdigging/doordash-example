@@ -33,6 +33,8 @@ function App() {
       <BottomSheet 
         isVisable={isVisable}
         close={handleClose}
+        title="My Custom Title"
+        subTitle="Some more information here"
       >
         <TextExample />
       </BottomSheet>
